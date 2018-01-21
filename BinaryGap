@@ -1,0 +1,25 @@
+//Find longest sequence of zeros in binary representation of an integer.
+public class Solution{      
+      public static void main(String[] args)
+      {       
+      int arr = 529 ;
+      int k = solution(arr);
+      System.out.print(k);
+    }
+    public static int solution(int N) {
+       String c = Integer.toBinaryString(N);
+       int a = 0;
+       int max = 0;
+       for(int i = 0; i < c.length() ; i++){
+           char cha = c.charAt(i);
+           if(cha == '1'){
+               if(a > max) max = a;
+               a = 0;
+           }
+           else  
+           a++;
+           }
+           
+       return max;
+    }
+}

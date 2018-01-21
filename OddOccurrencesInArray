@@ -1,0 +1,24 @@
+import java.util.Arrays;
+public class Solution{
+      public static void main(String[] args)
+      {       
+      int [] arr = new int[]{9,3,9,3,9,10,9};
+      int k = solution(arr);
+      System.out.print(k);
+    }
+    public static int solution(int[] A) {
+       Arrays.sort(A);
+       int lengthofA = A.length;
+       if (lengthofA == 1)
+            return A[0];
+       else if(A[lengthofA-1] != A[lengthofA-2])
+            return A[lengthofA-1];
+       else{
+       for(int i = 0; i < lengthofA-1; i+=2)
+       {
+           if (A[i] != A[i+1])  
+            return A[i];
+       }}
+       return 1;
+    }
+}
